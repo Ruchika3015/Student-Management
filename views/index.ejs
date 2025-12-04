@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(to right, #ffffc4, #ffffc3);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar,
+        .card {
+            border-radius: 10px;
+        }
+
+        .card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .btn {
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .btn:hover {
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #004080;
+        }
+
+        .btn-success:hover {
+            background-color: #006600;
+        }
+
+        .btn-warning:hover {
+            background-color: #cc9900;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <div class="container">
+        <a class="navbar-brand" href="/">📚 Student Management</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/students">Manage Students</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/courses">Manage Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/enrollments">Manage Enrollments</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/login">🔒 Admin Login</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Content (Centered Cards) -->
+<div class="container content py-5">
+    <div class="cards-container">
+        <!-- Manage Students Card -->
+        <div class="card text-center text-dark shadow-sm" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">👨‍🎓 Manage Students</h5>
+                <p class="card-text">Add, edit, or remove students with ease.</p>
+                <a href="/students" class="btn btn-primary">Go to Students</a>
+            </div>
+        </div>
+
+        <!-- Manage Courses Card -->
+        <div class="card text-center text-dark shadow-sm" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">📚 Manage Courses</h5>
+                <p class="card-text">Create and update course information.</p>
+                <a href="/courses" class="btn btn-success">Go to Courses</a>
+            </div>
+        </div>
+
+        <!-- Manage Enrollments Card -->
+        <div class="card text-center text-dark shadow-sm" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">📝 Manage Enrollments</h5>
+                <p class="card-text">Enroll students and assign grades.</p>
+                <a href="/enrollments" class="btn btn-warning">Go to Enrollments</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-center text-white py-3 mt-auto">
+    <div class="container">
+        <small>© 2025 Student Management System | Built with ❤️ and Bootstrap</small>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

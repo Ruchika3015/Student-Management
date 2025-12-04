@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Details</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 2rem 2.5rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+      width: 100%;
+      max-width: 700px;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      font-size: 1.75rem;
+      color: #2c3e50;
+    }
+
+    p {
+      margin: 0.5rem 0;
+      color: #444;
+      font-size: 1rem;
+    }
+
+    .section-title {
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+      color: #333;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.4rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.5rem;
+    }
+
+    th, td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f9fafb;
+      color: #333;
+      font-weight: 600;
+    }
+
+    tr:hover {
+      background-color: #f1f5f9;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.6rem 1.2rem;
+      background-color: #007BFF;
+      color: #fff;
+      text-decoration: none;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Student Details</h2>
+    <p><strong>Name:</strong> <%= student.name %></p>
+    <p><strong>Age:</strong> <%= student.age %></p>
+    <p><strong>Contact:</strong> <%= student.contact %></p>
+    <p><strong>Enrollment Year:</strong> <%= student.enrollmentYear %></p>
+
+    <div class="section-title">Enrolled Courses</div>
+    <% if (courses.length > 0) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Course Name</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <% courses.forEach(course => { %>
+            <tr>
+              
+              <td><%= course.name || 'NA'%></td>
+              
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <p>No courses enrolled.</p>
+    <% } %>
+
+    <a href="/students" class="btn">← Back to Student List</a>
+  </div>
+</body>
+</html>
